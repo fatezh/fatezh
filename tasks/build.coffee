@@ -23,7 +23,12 @@ gulp.task "stylesheets", ["clean:stylesheets"], ->
     .pipe(gulp.dest(AppConfig.buildpaths.stylesheets))
     .pipe(livereload())
 
-gulp.task "build", ["html", "stylesheets"]
+gulp.task "images", ["clean:images"], ->
+  gulp.src(AppConfig.paths.images)
+    .pipe(gulp.dest(AppConfig.buildpaths.images))
+    .pipe(livereload())
+
+gulp.task "build", ["html", "stylesheets", "images"]
 
 gulp.task "serve", ["build"], ->
   livereload.listen()
@@ -31,5 +36,6 @@ gulp.task "serve", ["build"], ->
 
   gulp.watch(AppConfig.paths.views, ["html"])
   gulp.watch(AppConfig.paths.stylesheets, ["stylesheets"])
+  gulp.watch(AppConfig.paths.images, ["images"])
 
   gutil.log("Listening on 0.0.0.0:#{AppConfig.serverport}")
