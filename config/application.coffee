@@ -7,6 +7,7 @@ module.exports =
 
   buildpaths:
     root: "build"
+    deploy: "build/**/*"
     views: "build/*.html"
     stylesheets: "build/stylesheets"
     images: "build/images"
