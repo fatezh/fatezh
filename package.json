@@ -24,7 +24,8 @@
     "express": "~4.12.4",
     "gulp-plumber": "~1.0.1",
     "connect-livereload": "~0.5.3",
-    "gulp-gh-pages": "~0.5.1"
+    "gulp-gh-pages": "~0.5.1",
+    "rimraf": "~2.3.4"
   },
   "dependencies": {
     "coffee-script": "~1.9.2"
