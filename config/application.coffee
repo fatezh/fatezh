@@ -5,10 +5,8 @@ module.exports =
     mainstylesheet: "app/stylesheets/application.css"
 
   buildpaths:
-    build: "build/**/*"
     root: "build"
     views: "build/*.html"
     stylesheets: "build/stylesheets"
 
   serverport: 4000
-  lrport: 35729
