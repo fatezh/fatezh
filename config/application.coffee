@@ -7,6 +7,7 @@ module.exports =
   buildpaths:
     build: "build/**/*"
     root: "build"
+    views: "build/*.html"
     stylesheets: "build/stylesheets"
 
   serverport: 4000
