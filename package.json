@@ -26,7 +26,14 @@
     "connect-livereload": "~0.5.3",
     "gulp-gh-pages": "~0.5.1",
     "rimraf": "~2.3.4",
-    "gulp-jade": "~1.0.1"
+    "gulp-jade": "~1.0.1",
+    "postcss-mixins": "~0.3.0",
+    "postcss-nested": "~0.3.1",
+    "postcss-import": "~5.2.2",
+    "postcss-simple-vars": "~0.3.0",
+    "autoprefixer-core": "~5.1.11",
+    "gulp-postcss": "~5.1.8",
+    "gulp-rename": "~1.2.2"
   },
   "dependencies": {
     "coffee-script": "~1.9.2"

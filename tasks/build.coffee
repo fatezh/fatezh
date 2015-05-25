@@ -4,6 +4,8 @@ gulp = require("gulp")
 gutil = require("gulp-util")
 plumber = require("gulp-plumber")
 jade = require("gulp-jade")
+postcss = require("gulp-postcss")
+rename = require("gulp-rename")
 
 express = require("express")
 livereload = require("gulp-livereload")
@@ -22,6 +24,8 @@ gulp.task "html", ["clean:html"], ->
 gulp.task "stylesheets", ["clean:stylesheets"], ->
   gulp.src(AppConfig.paths.stylesheets)
     .pipe(plumber())
+    .pipe(postcss(require("../config/postcss")))
+    .pipe(rename((path) -> path.extname = ".css"))
     .pipe(gulp.dest(AppConfig.buildpaths.stylesheets))
     .pipe(livereload())
 
