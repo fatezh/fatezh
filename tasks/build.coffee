@@ -3,6 +3,7 @@ AppConfig = require("../config/application")
 gulp = require("gulp")
 gutil = require("gulp-util")
 plumber = require("gulp-plumber")
+jade = require("gulp-jade")
 
 express = require("express")
 livereload = require("gulp-livereload")
@@ -14,6 +15,7 @@ server.use(express.static(AppConfig.buildpaths.root))
 gulp.task "html", ["clean:html"], ->
   gulp.src(AppConfig.paths.views)
     .pipe(plumber())
+    .pipe(jade())
     .pipe(gulp.dest(AppConfig.buildpaths.root))
     .pipe(livereload())
 

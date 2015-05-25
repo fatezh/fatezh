@@ -1,6 +1,6 @@
 module.exports =
   paths:
-    views: "app/views/**/*.html"
+    views: "app/views/**/*.jade"
     stylesheets: "app/stylesheets/**/*.css"
     images: "app/images/**/*"
     mainstylesheet: "app/stylesheets/application.css"
