@@ -1,9 +1,8 @@
 module.exports =
   paths:
     views: "app/views/**/*.jade"
-    stylesheets: "app/stylesheets/**/*.css"
+    stylesheets: "app/stylesheets/**/*.postcss"
     images: "app/images/**/*"
-    mainstylesheet: "app/stylesheets/application.css"
 
   buildpaths:
     root: "build"

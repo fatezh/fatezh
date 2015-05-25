@@ -32,7 +32,8 @@
     "postcss-import": "~5.2.2",
     "postcss-simple-vars": "~0.3.0",
     "autoprefixer-core": "~5.1.11",
-    "gulp-postcss": "~5.1.8"
+    "gulp-postcss": "~5.1.8",
+    "gulp-rename": "~1.2.2"
   },
   "dependencies": {
     "coffee-script": "~1.9.2"
