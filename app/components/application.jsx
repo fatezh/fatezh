@@ -1,6 +1,7 @@
 import React from "react";
+import ConstructionSign from "ConstructionSign";
 
 React.render(
-  <h1>Hello, World!</h1>,
-  document.body
-)
+  <ConstructionSign />,
+  document.getElementById("application-root")
+);
