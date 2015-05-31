@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 export default class ConstructionSign extends React.Component {
   render() {
@@ -10,6 +10,6 @@ export default class ConstructionSign extends React.Component {
           </td>
         </tr>
       </table>
-    );
+    )
   }
 }
