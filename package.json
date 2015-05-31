@@ -39,6 +39,7 @@
     "vinyl-source-stream": "~1.1.0"
   },
   "dependencies": {
-    "coffee-script": "~1.9.2"
+    "coffee-script": "~1.9.2",
+    "react": "~0.13.3"
   }
 }

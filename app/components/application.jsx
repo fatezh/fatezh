@@ -1,3 +1,6 @@
-const square = (x) => x * x;
+import React from "react";
 
-console.log(square(25));
+React.render(
+  <h1>Hello, World!</h1>,
+  document.body
+)
