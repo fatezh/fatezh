@@ -27,7 +27,7 @@ gulp.task "html", ["clean:html"], ->
     .pipe(livereload())
 
 gulp.task "stylesheets", ["clean:stylesheets"], ->
-  gulp.src(AppConfig.paths.stylesheets)
+  gulp.src(AppConfig.paths.mainstylesheet)
     .pipe(plumber())
     .pipe(postcss(require("../config/postcss")))
     .pipe(rename((path) -> path.extname = ".css"))

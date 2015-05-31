@@ -1,9 +1,10 @@
 module.exports =
   paths:
-    views: "app/views/**/*.jade"
-    stylesheets: "app/components/**/*.postcss"
-    javascripts: "app/components/**/*.jsx"
-    images: "app/images/**/*"
+    views: "src/views/**/*.jade"
+    stylesheets: "src/components/**/*.postcss"
+    javascripts: "src/components/**/*.jsx"
+    images: "src/images/**/*"
+    mainstylesheet: "src/application.postcss"
 
   buildpaths:
     root: "build"
@@ -16,6 +17,6 @@ module.exports =
   serverport: 4000
 
   browserify:
-    entries: ["./app/components/application.jsx"]
+    entries: ["./src/application.jsx"]
     extensions: [".jsx"]
-    paths: ["./app/components"]
+    paths: ["./src/components"]
