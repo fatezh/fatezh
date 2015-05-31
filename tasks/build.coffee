@@ -54,7 +54,7 @@ gulp.task "serve", ["build"], ->
   server.listen(AppConfig.serverport)
 
   gulp.watch(AppConfig.paths.views, ["html"])
-  gulp.watch(AppConfig.paths.stylesheets, ["stylesheets"])
+  gulp.watch([AppConfig.paths.stylesheets, AppConfig.paths.mainstylesheet], ["stylesheets"])
   gulp.watch(AppConfig.paths.images, ["images"])
   gulp.watch(AppConfig.paths.javascripts, ["javascripts"])
 

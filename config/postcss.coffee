@@ -7,7 +7,7 @@ postcssNested = require("postcss-nested")
 postcssMixins = require("postcss-mixins")
 
 module.exports = [
-  postcssImport(from: AppConfig.paths.main_stylesheet),
+  postcssImport(from: AppConfig.paths.main_stylesheet, glob: true),
   postcssMixins,
   postcssNested,
   postcssVars,
