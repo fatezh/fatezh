@@ -1,7 +1,10 @@
 import React from "react"
-import ConstructionSign from "ConstructionSign"
+import ApplicationContainer from "ApplicationContainer"
+import ApplicationHeader from "ApplicationHeader"
 
 React.render(
-  <ConstructionSign />,
+  <ApplicationContainer>
+    <ApplicationHeader />
+  </ApplicationContainer>,
   document.getElementById("application-root")
 )
