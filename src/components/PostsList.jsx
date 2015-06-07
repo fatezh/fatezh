@@ -5,7 +5,7 @@ import posts from "../posts"
 export default class PostsList extends React.Component {
   getPosts() {
     return posts.map(function(post) {
-      return <Post title={post.title} date={post.date} contents={post.contents} />
+      return <Post key={post.slug} title={post.title} date={post.date} contents={post.contents} />
     })
   }
 
