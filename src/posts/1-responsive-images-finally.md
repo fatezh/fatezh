@@ -12,7 +12,7 @@
 
 Код (форкайте на Гитхабе) использует два популярных Веб 2.0 концепта: «switch» и «jQuery», чтобы убедиться, что пользователь говорит правду насчет размера устройства, и показать правильное изображение.
 
-```js
+```javascript
 var mobileOrDesktop = prompt("Is this a mobile device (y) or desktop (n)? y/n");
  var $responsiveImage = $('img#responsive');
  switch ( mobileOrDesktop ) {

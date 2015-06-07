@@ -1,10 +1,15 @@
 import React from "react"
 import PostHeader from "PostHeader"
-import Markdown from "marked"
+import highlight from "highlight.js"
+import markdown from "marked"
+
+markdown.setOptions({
+  highlight: function (code) { return highlight.highlightAuto(code).value }
+})
 
 export default class Post extends React.Component {
   getPostContents() {
-    return { __html: Markdown(this.props.contents) }
+    return { __html: markdown(this.props.contents) }
   }
 
   render() {
