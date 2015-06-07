@@ -36,6 +36,7 @@ gulp.task "stylesheets", ["clean:stylesheets"], ->
 
 gulp.task "javascripts", ["clean:javascripts"], ->
   bundler.transform("babelify")
+    .transform("brfs")
     .bundle()
     .on("error", (e) -> gutil.log(e.toString()); @emit("end"))
     .pipe(source("application.js"))

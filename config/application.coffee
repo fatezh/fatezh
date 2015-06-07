@@ -2,7 +2,7 @@ module.exports =
   paths:
     views: "src/views/**/*.jade"
     stylesheets: "src/**/*.postcss"
-    javascripts: "src/**/*.jsx"
+    javascripts: "src/**/*.{jsx,js}"
     images: "src/images/**/*"
     mainstylesheet: "src/application.postcss"
 

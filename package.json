@@ -36,7 +36,8 @@
     "gulp-rename": "~1.2.2",
     "browserify": "~10.2.3",
     "babelify": "~6.1.2",
-    "vinyl-source-stream": "~1.1.0"
+    "vinyl-source-stream": "~1.1.0",
+    "brfs": "~1.4.0"
   },
   "dependencies": {
     "coffee-script": "~1.9.2",
