@@ -1,0 +1,15 @@
+import React from "react"
+import Post from "post"
+import posts from "../posts"
+
+export default class PostsList extends React.Component {
+  getPosts() {
+    return posts.map(function(post) {
+      return <Post title={post.title} date={post.date} contents={post.contents} />
+    })
+  }
+
+  render() {
+    return <section className="posts_list">{this.getPosts()}</section>
+  }
+}
