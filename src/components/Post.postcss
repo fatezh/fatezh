@@ -21,6 +21,8 @@
 
   pre {
     overflow: auto;
+
+    margin-right: -$main-content-diff;
   }
 
   p {
@@ -46,6 +48,12 @@
   }
 }
 
+@media (max-width: $main-width) {
+  .post pre {
+    margin-right: 0;
+  }
+}
+
 .post-header {
   padding: 0 1rem;
 }
@@ -56,6 +64,12 @@
   font-size: 2.4rem;
   font-weight: bold;
   line-height: 1.2;
+
+  a {
+    text-decoration: none;
+
+    color: inherit;
+  }
 }
 
 .post-date {

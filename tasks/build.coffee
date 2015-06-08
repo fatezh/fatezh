@@ -8,7 +8,9 @@ postcss = require("gulp-postcss")
 rename = require("gulp-rename")
 
 browserify = require("browserify")
+watchify = require("watchify")
 source = require("vinyl-source-stream")
+assign = require("lodash/object/assign")
 
 express = require("express")
 livereload = require("gulp-livereload")
@@ -17,7 +19,16 @@ server = express()
 server.use(require("connect-livereload")())
 server.use(express.static(AppConfig.buildpaths.root))
 
-bundler = browserify(AppConfig.browserify)
+bundler = watchify(browserify(assign({}, watchify.args, AppConfig.browserify)))
+bundler.transform("babelify").transform("brfs")
+
+bundle = ->
+  bundler
+    .bundle()
+    .on("error", (e) -> gutil.log(e.toString()); @emit("end"))
+    .pipe(source("application.js"))
+    .pipe(gulp.dest(AppConfig.buildpaths.javascripts))
+    .pipe(livereload())
 
 gulp.task "html", ["clean:html"], ->
   gulp.src(AppConfig.paths.views)
@@ -34,14 +45,7 @@ gulp.task "stylesheets", ["clean:stylesheets"], ->
     .pipe(gulp.dest(AppConfig.buildpaths.stylesheets))
     .pipe(livereload())
 
-gulp.task "javascripts", ["clean:javascripts"], ->
-  bundler.transform("babelify")
-    .transform("brfs")
-    .bundle()
-    .on("error", (e) -> gutil.log(e.toString()); @emit("end"))
-    .pipe(source("application.js"))
-    .pipe(gulp.dest(AppConfig.buildpaths.javascripts))
-    .pipe(livereload())
+gulp.task "javascripts", ["clean:javascripts"], bundle
 
 gulp.task "images", ["clean:images"], ->
   gulp.src(AppConfig.paths.images)
@@ -57,6 +61,6 @@ gulp.task "serve", ["build"], ->
   gulp.watch(AppConfig.paths.views, ["html"])
   gulp.watch(AppConfig.paths.stylesheets, ["stylesheets"])
   gulp.watch(AppConfig.paths.images, ["images"])
-  gulp.watch(AppConfig.paths.javascripts, ["javascripts"])
+  bundler.on "update", bundle
 
   gutil.log("Listening on 0.0.0.0:#{AppConfig.serverport}")
