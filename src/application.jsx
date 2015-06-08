@@ -13,5 +13,5 @@ const routes = (
 )
 
 Router.run(routes, function(Handler) {
-  React.render(<Handler/>, document.getElementById("application-root"))
+  React.render(<Handler />, document.getElementById("application-root"))
 })

@@ -8,7 +8,7 @@ export default class ApplicationContainer extends React.Component {
     return (
       <main className="application_container">
         <ApplicationHeader />
-        <RouteHandler/>
+        <RouteHandler />
       </main>
     )
   }

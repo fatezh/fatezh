@@ -2,7 +2,6 @@ import React from "react"
 import Router from "react-router"
 const { Link } = Router
 
-
 export default class ApplicationHeader extends React.Component {
   render() {
     return(
