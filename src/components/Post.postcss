@@ -21,6 +21,8 @@
 
   pre {
     overflow: auto;
+
+    margin-right: -$main-content-diff;
   }
 
   p {
@@ -43,6 +45,12 @@
 
     content: '—';
     text-align: left;
+  }
+}
+
+@media (max-width: $main-width) {
+  .post pre {
+    margin-right: 0;
   }
 }
 
