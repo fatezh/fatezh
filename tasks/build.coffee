@@ -6,6 +6,8 @@ plumber = require("gulp-plumber")
 jade = require("gulp-jade")
 postcss = require("gulp-postcss")
 rename = require("gulp-rename")
+markdown = require("gulp-markdown")
+typograf = require("gulp-typograf")
 
 browserify = require("browserify")
 watchify = require("watchify")
@@ -37,6 +39,13 @@ gulp.task "html", ["clean:html"], ->
     .pipe(gulp.dest(AppConfig.buildpaths.root))
     .pipe(livereload())
 
+gulp.task "posts", ->
+  gulp.src(AppConfig.paths.posts)
+    .pipe(plumber())
+    .pipe(markdown(AppConfig.markdown))
+    .pipe(typograf(AppConfig.typograf))
+    .pipe(gulp.dest(AppConfig.buildpaths.posts))
+
 gulp.task "stylesheets", ["clean:stylesheets"], ->
   gulp.src(AppConfig.paths.mainstylesheet)
     .pipe(plumber())
@@ -52,7 +61,7 @@ gulp.task "images", ["clean:images"], ->
     .pipe(gulp.dest(AppConfig.buildpaths.images))
     .pipe(livereload())
 
-gulp.task "build", ["html", "stylesheets", "images", "javascripts"]
+gulp.task "build", ["html", "stylesheets", "images", "javascripts", "posts"]
 
 gulp.task "serve", ["build"], ->
   livereload.listen()
@@ -61,6 +70,7 @@ gulp.task "serve", ["build"], ->
   gulp.watch(AppConfig.paths.views, ["html"])
   gulp.watch(AppConfig.paths.stylesheets, ["stylesheets"])
   gulp.watch(AppConfig.paths.images, ["images"])
+  gulp.watch(AppConfig.paths.posts, ["posts"])
   bundler.on "update", bundle
 
   gutil.log("Listening on 0.0.0.0:#{AppConfig.serverport}")
