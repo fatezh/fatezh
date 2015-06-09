@@ -15,7 +15,7 @@ export default class Post extends React.Component {
         <section className="post-contents" dangerouslySetInnerHTML={this.getPostContents()}>
         </section>
 
-        <PostFooter />
+        <PostFooter {...this.props.author}/>
       </article>
     )
   }

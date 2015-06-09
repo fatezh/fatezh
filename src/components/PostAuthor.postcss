@@ -1,10 +1,15 @@
 $author-img-size: 60px;
 
+.post_author {
+  overflow: hidden;
+}
+
 .post_author-img {
+  float: left;
+
   width: $author-img-size;
   height: $author-img-size;
-  float: left;
-  margin: .2rem 1rem 1rem 0;
+  margin: .2rem 1rem 0 0;
 }
 
 .post_author-name {
@@ -12,6 +17,9 @@ $author-img-size: 60px;
 }
 
 .post_author-bio {
-  font-size: 70%;
+  overflow: hidden;
+
   max-width: 23rem;
+
+  font-size: 70%;
 }

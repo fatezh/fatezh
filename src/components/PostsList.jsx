@@ -6,12 +6,7 @@ export default class PostsList extends React.Component {
   getPosts() {
     return posts.map(function(post) {
       return (
-        <Post
-          key={post.slug}
-          title={post.title}
-          slug={post.slug}
-          date={post.date}
-          contents={post.contents} />
+        <Post {...post} key={post.slug} />
       )
     })
   }

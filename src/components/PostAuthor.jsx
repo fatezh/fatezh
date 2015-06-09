@@ -7,12 +7,11 @@ export default class PostAuthor extends React.Component {
         <img src="https://d262ilb51hltx0.cloudfront.net/fit/c/800/800/0*bXYi3CDSmVsrABQK.jpeg" alt="" className="post_author-img"/>
 
         <h3 className="post_author-name">
-          <a href="#">Александр Потехин</a>
+          <a href={this.props.link}>{this.props.name}</a>
         </h3>
 
         <p className="post_author-bio">
-          Доктор физико-математических наук, ведущий научный сотрудник петербургского
-          Физико-технического института имени А.Ф. Иоффе (ФТИ) РАН
+          {this.props.bio}
         </p>
       </section>
     )

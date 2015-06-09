@@ -12,11 +12,7 @@ class SinglePost extends React.Component {
 
   render() {
     return (
-      <Post
-        title={this.getPost().title}
-        slug={this.getPost().slug}
-        date={this.getPost().date}
-        contents={this.getPost().contents} />
+      <Post {...this.getPost()} />
     )
   }
 }

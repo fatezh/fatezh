@@ -5,7 +5,7 @@ export default class PostFooter extends React.Component {
   render() {
     return (
       <footer className="post_footer">
-        <PostAuthor />
+        <PostAuthor {...this.props} />
       </footer>
     )
   }
