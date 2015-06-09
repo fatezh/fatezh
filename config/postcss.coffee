@@ -1,4 +1,4 @@
-AppConfig = require "./application"
+AppConfig = require("./application")
 
 autoprefixer = require("autoprefixer-core")
 postcssVars = require("postcss-simple-vars")

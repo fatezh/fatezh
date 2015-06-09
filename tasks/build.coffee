@@ -1,4 +1,5 @@
 AppConfig = require("../config/application")
+bundler = require("../config/bundler")
 
 gulp = require("gulp")
 gutil = require("gulp-util")
@@ -9,10 +10,7 @@ rename = require("gulp-rename")
 markdown = require("gulp-markdown")
 typograf = require("gulp-typograf")
 
-browserify = require("browserify")
-watchify = require("watchify")
 source = require("vinyl-source-stream")
-assign = require("lodash/object/assign")
 
 express = require("express")
 livereload = require("gulp-livereload")
@@ -20,9 +18,6 @@ livereload = require("gulp-livereload")
 server = express()
 server.use(require("connect-livereload")())
 server.use(express.static(AppConfig.buildpaths.root))
-
-bundler = watchify(browserify(assign({}, watchify.args, AppConfig.browserify)))
-bundler.transform("babelify").transform("brfs")
 
 bundle = ->
   bundler
