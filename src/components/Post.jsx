@@ -1,5 +1,6 @@
 import React from "react"
 import PostHeader from "PostHeader"
+import PostFooter from "PostFooter"
 
 export default class Post extends React.Component {
   getPostContents() {
@@ -13,6 +14,8 @@ export default class Post extends React.Component {
 
         <section className="post-contents" dangerouslySetInnerHTML={this.getPostContents()}>
         </section>
+
+        <PostFooter />
       </article>
     )
   }
