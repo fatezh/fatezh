@@ -8,7 +8,7 @@ export default class PostHeader extends React.Component {
   }
 
   render() {
-    return(
+    return (
       <header className="post_header">
         <h2 className="post_header-title">
           <Link to={this.getPermalink()}>

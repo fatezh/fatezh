@@ -8,7 +8,7 @@ export default class Post extends React.Component {
   }
 
   render() {
-    return(
+    return (
       <article className="post">
         <PostHeader title={this.props.title} date={this.props.date} slug={this.props.slug} />
 
