@@ -8,6 +8,7 @@ export default [
     date: "30 мая 2015",
     author: {
       name: "Джен Шиффер",
+      img: "/images/jenn.jpeg",
       link: "https://medium.com/cool-code-pal/a-client-side-responsive-image-solution-finally-d9a47f94eea7",
       bio: "Недавно была включена в список Форбс «Топ 9 людей в ИТ, которым однажды было 9»"
     }
@@ -19,6 +20,7 @@ export default [
     date: "30 мая 2015",
     author: {
       name: "Джен Шиффер",
+      img: "/images/jenn.jpeg",
       link: "https://medium.com/cool-code-pal/an-introduction-to-two-factor-in-browser-css-preprocessing-e32792e56b53",
       bio: "Автор бестселлера «Как CSS убил RSS»"
     }
@@ -30,6 +32,7 @@ export default [
     date: "30 мая 2015",
     author: {
       name: "Alex",
+      img: "/images/chairborn.jpg",
       link: "http://pytalk.ru/forum/web/704/",
       bio: "Политикан, менеджер, маркетоид. Характер нордический"
     }
