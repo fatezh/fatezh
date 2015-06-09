@@ -7,6 +7,12 @@
 
     font-size: 1.25rem;
   }
+}
+
+.post-contents {
+  box-sizing: border-box;
+  max-width: $content-width;
+  padding: 1rem;
 
   blockquote {
     margin: 0 0 1.5rem;
@@ -29,6 +35,10 @@
     margin: 0 0 1.5rem;
   }
 
+  p:last-child {
+    margin: 0;
+  }
+
   ul {
     margin: 0 0 1.5rem;
 
@@ -49,39 +59,8 @@
 }
 
 @media (max-width: 50rem) {
-  .post pre {
+  .post-contents pre {
     margin-right: 0;
   }
 }
 
-.post-header {
-  padding: 0 1rem;
-}
-
-.post-title {
-  padding: 0 0 .25rem;
-
-  font-size: 2.4rem;
-  font-weight: bold;
-  line-height: 1.2;
-
-  a {
-    text-decoration: none;
-
-    color: inherit;
-  }
-}
-
-.post-date {
-  letter-spacing: 2px;
-  text-transform: uppercase;
-
-  font-size: .7rem;
-  line-height: 1.14;
-}
-
-.post-contents {
-  box-sizing: border-box;
-  max-width: $content-width;
-  padding: 1rem;
-}

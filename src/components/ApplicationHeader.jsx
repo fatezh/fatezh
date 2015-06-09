@@ -4,7 +4,7 @@ const { Link } = Router
 
 export default class ApplicationHeader extends React.Component {
   render() {
-    return(
+    return (
       <header className="application_header">
         <h1 className="application_header-title">
           <Link to="/">Верстающий Фатеж</Link>
