@@ -1,4 +1,5 @@
 highlight = require("highlight.js")
+gutil = require("gulp-util")
 
 module.exports =
   paths:
@@ -24,6 +25,11 @@ module.exports =
     entries: ["./src/application.jsx"]
     extensions: [".jsx"]
     paths: ["./src/components"]
+
+  plumber:
+    errorHandler: (err) ->
+      gutil.log(err.message)
+      @emit("end")
 
   markdown:
     highlight: (code) -> highlight.highlightAuto(code).value

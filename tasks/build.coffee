@@ -29,21 +29,21 @@ bundle = ->
 
 gulp.task "html", ["clean:html"], ->
   gulp.src(AppConfig.paths.views)
-    .pipe(plumber())
+    .pipe(plumber(AppConfig.plumber))
     .pipe(jade())
     .pipe(gulp.dest(AppConfig.buildpaths.root))
     .pipe(livereload())
 
 gulp.task "posts", ->
   gulp.src(AppConfig.paths.posts)
-    .pipe(plumber())
+    .pipe(plumber(AppConfig.plumber))
     .pipe(markdown(AppConfig.markdown))
     .pipe(typograf(AppConfig.typograf))
     .pipe(gulp.dest(AppConfig.buildpaths.posts))
 
 gulp.task "stylesheets", ["clean:stylesheets"], ->
   gulp.src(AppConfig.paths.mainstylesheet)
-    .pipe(plumber())
+    .pipe(plumber(AppConfig.plumber))
     .pipe(postcss(require("../config/postcss")))
     .pipe(rename((path) -> path.extname = ".css"))
     .pipe(gulp.dest(AppConfig.buildpaths.stylesheets))
