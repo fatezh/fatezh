@@ -1,0 +1,33 @@
+<p>CSS — язык программирования для форматирования HTML элементов без помощи JavaScript или Node.js. Выпущенный 17 лет назад<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>он буквально изменил внешний вид сайтов и веб-приложений. Как и вы в подростковом возрасте<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>CSS хотел быть самым крутым языком программирования на районе. Так появились препроцессоры.</p>
+<p>Sass<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>Less<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>ZendPHP<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>Stylus оптимизировали и улучшили процесс верстки с CSS. Но с ними есть и проблемы:</p>
+<ul>
+<li>компиляция — бессмысленная трата времени;</li>
+<li>надо переключаться между окнами с исходным и скомпилированным кодом. Бесполезная трата времени и экрана;</li>
+<li>они не предотвращают ошибки. Все мы люди<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>и все мы совершаем ошибки. Но узнаем о них<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>когда они уже в браузере.</li>
+</ul>
+<p>Я предлагаю самый лучший тип препроцессоров — двухфакторный браузерный CSS препроцессинг.</p>
+<div class="outstanding">
+  <p>
+    Двухфакторный браузерный CSS препроцессинг.<br />Да потому что мы можем.
+  </p>
+</div>
+
+<p>Двухфакторный браузерный CSS препроцессинг<span class="typograf-oa-sp-lbracket"> </span><span class="typograf-oa-lbracket">(</span>ДФБЦП)  состоит из двух компонентов: двухфакторинг и браузер.</p>
+<p>Первый фактор — CSS. Например,<span class="typograf-oa-sp-lquot"> </span><span class="typograf-oa-lquot">«</span>мой_сайт.css»:</p>
+<pre><code class="lang-css"><span class="hljs-tag">body</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">font-weight</span>:<span class="hljs-value"> bold</span></span>; <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">20pt</span></span></span>; }</span>
+<span class="hljs-tag">img</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">border</span>:<span class="hljs-value"> <span class="hljs-number">1px</span> solid lime</span></span>; }</span>
+</code></pre>
+<p>Второй фактор добавляем прямо в HTML<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>взгляните на<span class="typograf-oa-sp-lquot"> </span><span class="typograf-oa-lquot">«</span>главная.html»:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylescripts"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"мой_сайт.css"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/css"</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"font-weight:bold; font-size: 20pt; "</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"myimage.png"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"border: 1px solid magenta;"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">""</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+<p>Обратите внимание: второй фактор<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>встроенные стили<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>делает границу <em>пурпурной</em>. Значение <code>lime</code> в исходном CSS было человеческой ошибкой<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>которую исправил второй фактор.</p>
+<p>Вынося CSS из HTML и встраивая его в HTML<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>мы получаем резервную проверку стилей. Кроме того<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>мы не тратили время на компиляцию CSS и установку препроцессоров<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>потому что все происходило в браузере!</p>
+<p>В последнее время браузеры стали более умнее. Как и веб-разработчики. Самое время показать<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>какие мы умные<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>развивая препроцессоры<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>которыми пользовались наши предки.</p>
+<p>Двухфакторный браузерный CSS препроцессинг — это только начало.</p>
