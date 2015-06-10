@@ -56,7 +56,11 @@ gulp.task "images", ["clean:images"], ->
     .pipe(gulp.dest(AppConfig.buildpaths.images))
     .pipe(livereload())
 
-gulp.task "build", ["html", "stylesheets", "images", "javascripts", "posts"]
+gulp.task "humans.txt", ->
+  gulp.src(AppConfig.paths.humans)
+    .pipe(gulp.dest(AppConfig.buildpaths.root))
+
+gulp.task "build", ["html", "stylesheets", "images", "javascripts", "posts", "humans.txt"]
 
 gulp.task "serve", ["build"], ->
   livereload.listen()

@@ -9,6 +9,7 @@ module.exports =
     images: "src/images/**/*"
     posts: "src/posts/*.md"
     mainstylesheet: "src/application.postcss"
+    humans: "src/humans.txt"
 
   buildpaths:
     root: "build"

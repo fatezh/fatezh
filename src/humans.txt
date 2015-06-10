@@ -1,0 +1,11 @@
+/* TEAM */
+Editor, Developer: Vasily Polovnyov
+Twitter: @vazilla
+
+Assistant Editor: Niyaz Serazetdinov
+
+Designer: Andrew Bouzyukin
+Twitter: @thedonkeyhot
+
+/* THANKS */
+Kate Vasilenko
