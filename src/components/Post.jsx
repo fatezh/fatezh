@@ -1,8 +1,11 @@
-import React from "react"
+import React from "react/addons"
 import PostHeader from "PostHeader"
 import PostFooter from "PostFooter"
+const { PureRenderMixin } = React.addons
 
 export default class Post extends React.Component {
+  mixins: [PureRenderMixin]
+
   getPostContents() {
     return { __html: this.props.contents }
   }
