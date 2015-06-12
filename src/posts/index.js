@@ -2,6 +2,18 @@ var fs = require("fs")
 
 export default [
   {
+    title: "4 фишки, чтобы сделать Javascript быстрее",
+    slug: "2-js-hacks-for-faster-web",
+    contents: fs.readFileSync(__dirname + "/2-js-hacks-for-faster-web.html", "utf-8"),
+    date: "12 июня 2015",
+    author: {
+      name: "Николас Ортензио",
+      img: "/images/nicolas.jpeg",
+      link: "https://medium.com/@p_arithmetic/4-more-javascript-hacks-to-make-your-javascript-faster-1f5fd88a219e",
+      bio: "Разработчик со сложной фамилией"
+    }
+  },
+  {
     title: "Рубрика. Диванный эксперт",
     slug: "2-chairborn",
     contents: fs.readFileSync(__dirname + "/2-chairborn.html", "utf-8"),
