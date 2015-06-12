@@ -2,6 +2,42 @@ var fs = require("fs")
 
 export default [
   {
+    title: "Введение в табличный API HTML5",
+    slug: "2-html5-table-api",
+    contents: fs.readFileSync(__dirname + "/2-html5-table-api.html", "utf-8"),
+    date: "12 июня 2015",
+    author: {
+      name: "Николас Ортензио",
+      img: "/images/nicolas.jpeg",
+      link: "https://medium.com/@p_arithmetic/introducing-the-html5-table-api-453a163a3265",
+      bio: "разработчик, призер Олимпиады по ховерборду"
+    }
+  },
+  {
+    title: "4 фишки, чтобы сделать Javascript быстрее",
+    slug: "2-js-hacks-for-faster-web",
+    contents: fs.readFileSync(__dirname + "/2-js-hacks-for-faster-web.html", "utf-8"),
+    date: "12 июня 2015",
+    author: {
+      name: "Николас Ортензио",
+      img: "/images/nicolas.jpeg",
+      link: "https://medium.com/@p_arithmetic/4-more-javascript-hacks-to-make-your-javascript-faster-1f5fd88a219e",
+      bio: "Разработчик со сложной фамилией"
+    }
+  },
+  {
+    title: "Рубрика. Диванный эксперт",
+    slug: "2-chairborn",
+    contents: fs.readFileSync(__dirname + "/2-chairborn.html", "utf-8"),
+    date: "12 июня 2015",
+    author: {
+      name: "JawsIk",
+      img: "/images/chairborn.jpg",
+      link: "http://pytalk.ru/forum/web/441/",
+      bio: "Активный человек, работающий в CSS и Flash"
+    }
+  },
+  {
     title: "Отзывчивые изображения. Наконец-то",
     slug: "1-responsive-images-finally",
     contents: fs.readFileSync(__dirname + "/1-responsive-images-finally.html", "utf-8"),
@@ -16,7 +52,7 @@ export default [
   {
     title: "Двухфакторный препроцессинг CSS",
     slug: "1-two-factor-css",
-    contents: fs.readFileSync(__dirname + "/2-two-factor-css.html", "utf-8"),
+    contents: fs.readFileSync(__dirname + "/1-two-factor-css.html", "utf-8"),
     date: "30 мая 2015",
     author: {
       name: "Джен Шиффер",
@@ -27,8 +63,8 @@ export default [
   },
   {
     title: "Рубрика. Диванный эксперт",
-    slug: "3-chairborn",
-    contents: fs.readFileSync(__dirname + "/3-chairborn.html", "utf-8"),
+    slug: "1-chairborn",
+    contents: fs.readFileSync(__dirname + "/1-chairborn.html", "utf-8"),
     date: "30 мая 2015",
     author: {
       name: "Alex",
