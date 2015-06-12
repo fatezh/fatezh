@@ -1,0 +1,37 @@
+<p>Создание сайтов с гибкой и устойчивой раскладкой — проблема<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>которой лет столько же<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>сколько и Интернету. Ее решают<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>делая раскладку дивами. Это работает<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>но это хак<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>не лишенный проблем:</p>
+<ul>
+<li>дивы несемантичны;</li>
+<li>с ними используют сложный C.S.S<span class="typograf-oa-sp-lbracket"> </span><span class="typograf-oa-lbracket">(</span>California Style Sheet);</li>
+<li>они неадаптивные;</li>
+<li>у них есть проблемы с производительностью на мобильных устройствах;</li>
+<li>поисковые роботы их не жалуют;</li>
+<li>требуется jQuery<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>чтобы добавлять контент в дивы.</li>
+</ul>
+<p>Я наткнулся на новый табличный HTML5 API на сайте W3Schools<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>лучшем ресурсе для новичков и экспертов в веб-разработке. Знаю<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>вы сейчас думаете:<span class="typograf-oa-sp-lquot"> </span><span class="typograf-oa-lquot">«</span>Ну<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>уж<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>нет<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>я не буду использовать экспериментальный API в моем блоге». Согласен<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>но вот какая штука: Microsoft пропатчил свои старые браузеры<span class="typograf-oa-sp-lbracket"> </span><span class="typograf-oa-lbracket">(</span>IE5.5+)  и добавил в них поддержку HTML5 таблиц. Можно использовать.</p>
+<h3 id="-">Основы</h3>
+<p>Если вы использовали CSS сетки на дивах<span class="typograf-oa-sp-lbracket"> </span><span class="typograf-oa-lbracket">(</span>DIV based CSS grids<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>DBCG), то для вас нет ничего нового в HTML5 таблицах.</p>
+<p>HTML5 таблица состоит из трех частей. <code>&lt;table&gt;</code> — основа таблицы; <code>&lt;tr&gt;</code> — ее строка<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>а <code>&lt;tc&gt;</code> — колонка. Запомнить просто: <code>&lt;table&gt;</code> — table<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span><code>&lt;tr&gt;</code> — table row<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span><code>&lt;tc&gt;</code> — table column.</p>
+<p>В DBCG таблицы<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>строки и колонки — это <code>&lt;div&gt;</code> элементы<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>уничтожающие иерархию и семантику контента. Не круто. Люди<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>верстающие так, — антисемантисты.</p>
+<p>С таблицами мы заменяем дивы на их семмантически-верных родственников<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span><code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;td&gt;</code>. И не нужно никакого C.S.S: поддержка таблиц встроена в браузер.</p>
+<h3 id="-">Пример</h3>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">table</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>row 1<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>left column<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>middle column<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>right column<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>row 1<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>left column<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>middle column<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>right column<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
+</code></pre>
+<p><img src="/images/table.png" alt="" /></p>
+<p>Никакого C.S.S. Работает и масштабируется во всех браузерах. Да и выглядит великолепно.</p>
+<h3 id="-">Это. Не. Можыд. Быт.</h3>
+<p>У таблиц есть и проблемы: с ними тяжело начинать верстать. Чтобы помочь с этим<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>я создал <a href="http://downwith.us/tablr">Tablr</a>, табличный HTML5 фреймворк. Скачивайте<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>настраивайте и используйте в некоммерческих проектах. По запросу есть и коммерческие/корпоративные лицензии.</p>
+<h3 id="-">Ответ<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>который мы ждали</h3>
+<p>Microsoft услышала нас и дала инструмент для создания изящнейших сайтов. Это именно то<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>о чем мечтали разработчики. Я <em>верю</em> в таблицы.</p>

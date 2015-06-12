@@ -2,6 +2,18 @@ var fs = require("fs")
 
 export default [
   {
+    title: "Введение в табличный API HTML5",
+    slug: "2-html5-table-api",
+    contents: fs.readFileSync(__dirname + "/2-html5-table-api.html", "utf-8"),
+    date: "12 июня 2015",
+    author: {
+      name: "Николас Ортензио",
+      img: "/images/nicolas.jpeg",
+      link: "https://medium.com/@p_arithmetic/introducing-the-html5-table-api-453a163a3265",
+      bio: "разработчик, призер Олимпиады по ховерборду"
+    }
+  },
+  {
     title: "4 фишки, чтобы сделать Javascript быстрее",
     slug: "2-js-hacks-for-faster-web",
     contents: fs.readFileSync(__dirname + "/2-js-hacks-for-faster-web.html", "utf-8"),
