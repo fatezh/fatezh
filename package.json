@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "gulp serve",
-    "test": "gulp test"
+    "test": "gulp test",
+    "build": "NODE_ENV=production gulp build",
+    "deploy:ci": "NODE_ENV=production gulp deploy:ci"
   },
   "repository": {
     "type": "git",
