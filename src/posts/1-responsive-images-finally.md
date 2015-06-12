@@ -18,28 +18,28 @@
 
 ```javascript
 var mobileOrDesktop = prompt("Is this a mobile device (y) or desktop (n)? y/n");
- var $responsiveImage = $('img#responsive');
- switch ( mobileOrDesktop ) {
+var $responsiveImage = $('img#responsive');
+switch ( mobileOrDesktop ) {
   case 'y':
- $responsiveImage.attr({
-  'src' : 'mobile.jpg',
-  'alt' : 'mobile image'
- });
- break;
- case 'n':
- $responsiveImage.attr({
-  'src' : 'desktop.jpg',
-  'alt' : 'desktop image'
- });
- break;
- default:
- $responsiveImage.attr({
-  'src' : 'trojanhorse.jpg',
-  'alt' : 'hack the planet'
- });
- $responsiveImage.after('<h1>TOLD YA TO CHOOSE Y OR NO BUT YOU DIDN\'T SO<br />~ * V I R U S * ~');
- break;
- }
+    $responsiveImage.attr({
+      'src' : 'mobile.jpg',
+      'alt' : 'mobile image'
+    });
+    break;
+  case 'n':
+    $responsiveImage.attr({
+      'src' : 'desktop.jpg',
+      'alt' : 'desktop image'
+    });
+    break;
+  default:
+    $responsiveImage.attr({
+      'src' : 'trojanhorse.jpg',
+      'alt' : 'hack the planet'
+    });
+    $responsiveImage.after('<h1>TOLD YA TO CHOOSE Y OR NO BUT YOU DIDN\'T SO<br />~ * V I R U S * ~');
+    break;
+}
 ```
 
 Все мы очень долго ждали решения для отзывчивых изображений. Здорово, что решение, к которому пришли разработчики и производители браузеров, такое простое. Простое как для разработчика, так и для пользователя.
