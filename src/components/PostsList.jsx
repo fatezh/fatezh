@@ -4,11 +4,7 @@ import posts from "../posts"
 
 export default class PostsList extends React.Component {
   getPosts() {
-    return posts.map(function(post) {
-      return (
-        <Post {...post} key={post.slug} />
-      )
-    })
+    return posts.map(post => <Post {...post} key={post.slug} />)
   }
 
   render() {

@@ -51,16 +51,12 @@ gulp.task "stylesheets", ["clean:stylesheets"], ->
 
 gulp.task "javascripts", ["clean:javascripts"], bundle
 
-gulp.task "images", ["clean:images"], ->
-  gulp.src(AppConfig.paths.images)
-    .pipe(gulp.dest(AppConfig.buildpaths.images))
+gulp.task "assets", ["clean:assets"], ->
+  gulp.src(AppConfig.paths.assets)
+    .pipe(gulp.dest(AppConfig.buildpaths.root))
     .pipe(livereload())
 
-gulp.task "humans.txt", ->
-  gulp.src(AppConfig.paths.humans)
-    .pipe(gulp.dest(AppConfig.buildpaths.root))
-
-gulp.task "build", ["html", "stylesheets", "images", "javascripts", "posts", "humans.txt"]
+gulp.task "build", ["html", "stylesheets", "assets", "javascripts", "posts"]
 
 gulp.task "serve", ["build"], ->
   livereload.listen()
@@ -68,7 +64,7 @@ gulp.task "serve", ["build"], ->
 
   gulp.watch(AppConfig.paths.views, ["html"])
   gulp.watch(AppConfig.paths.stylesheets, ["stylesheets"])
-  gulp.watch(AppConfig.paths.images, ["images"])
+  gulp.watch(AppConfig.paths.assets, ["assets"])
   gulp.watch(AppConfig.paths.posts, ["posts"])
   bundler.on "update", bundle
 
