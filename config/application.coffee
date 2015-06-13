@@ -3,7 +3,7 @@ gutil = require("gulp-util")
 
 module.exports =
   paths:
-    views: "src/views/**/*.jade"
+    views: "src/**/*.jade"
     stylesheets: "src/**/*.postcss"
     javascripts: "src/**/*.{jsx,js}"
     images: "src/images/**/*"
