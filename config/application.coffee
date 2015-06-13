@@ -6,7 +6,7 @@ module.exports =
     views: "src/**/*.jade"
     stylesheets: "src/**/*.postcss"
     javascripts: "src/**/*.{jsx,js}"
-    images: "src/images/**/*"
+    assets: "src/assets/**/*"
     posts: "src/posts/*.md"
     mainstylesheet: "src/application.postcss"
     humans: "src/humans.txt"
