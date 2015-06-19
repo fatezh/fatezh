@@ -6,11 +6,11 @@ const { PureRenderMixin } = React.addons
 export default class ApplicationHeader extends React.Component {
   render() {
     return (
-      <header className="application_header">
+      <td className="application_header">
         <h1 className="application_header-title">
           <Link to="/">Верстающий Фатеж</Link>
         </h1>
-      </header>
+      </td>
     )
   }
 }
