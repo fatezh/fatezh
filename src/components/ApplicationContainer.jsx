@@ -9,12 +9,19 @@ class ApplicationContainer extends React.Component {
     const name = this.context.router.getCurrentPath()
 
     return (
-      <main className="application_container">
-        <ApplicationHeader />
-        <CSSTransitionGroup component="div" transitionName="application_container-body" transitionLeave={false}>
-          <RouteHandler key={name} />
-        </CSSTransitionGroup>
-      </main>
+      <table className="application_container"><tbody>
+        <tr>
+          <ApplicationHeader />
+        </tr>
+        <tr>
+          <CSSTransitionGroup
+            component="td"
+            transitionName="application_container-body"
+            transitionLeave={false}>
+              <RouteHandler key={name} />
+          </CSSTransitionGroup>
+        </tr>
+      </tbody></table>
     )
   }
 }
