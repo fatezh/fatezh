@@ -2,6 +2,18 @@ var fs = require("fs")
 
 export default [
   {
+    title: "Заклинаю вас, откажитесь от CSS",
+    slug: "3-deprecate-your-css",
+    contents: fs.readFileSync(__dirname + "/3-deprecate-your-css.html", "utf-8"),
+    date: "26 июня 2015",
+    author: {
+      name: "Джен Шиффер",
+      img: "/images/jenn.jpeg",
+      link: "https://medium.com/cool-code-pal/a-call-for-web-developers-to-deprecate-their-css-1f6430781393",
+      bio: "Веб-разработчик, теоретик сложных вычислений. Автор “PHP: The Hood Parts” и других программно-фантастических бестселлеров на Amazon Kindle и Zune»"
+    }
+  },
+  {
     title: "Введение в табличный API HTML5",
     slug: "2-html5-table-api",
     contents: fs.readFileSync(__dirname + "/2-html5-table-api.html", "utf-8"),
