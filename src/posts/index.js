@@ -2,6 +2,18 @@ var fs = require("fs")
 
 export default [
   {
+    title: "Топ 5 ошибок в CSS",
+    slug: "3-top-5-css-mistakes",
+    contents: fs.readFileSync(__dirname + "/3-top-5-css-mistakes.html", "utf-8"),
+    date: "26 июня 2015",
+    author: {
+      name: "Джен Шиффер",
+      img: "/images/jenn.jpeg",
+      link: "https://medium.com/cool-code-pal/top-5-c-s-s-mistakes-to-avoid-before-you-die-ee3221e30f6c",
+      bio: "Фотограф-любитель хот-догов"
+    }
+  },
+  {
     title: "Заклинаю вас, откажитесь от CSS",
     slug: "3-deprecate-your-css",
     contents: fs.readFileSync(__dirname + "/3-deprecate-your-css.html", "utf-8"),
@@ -10,7 +22,7 @@ export default [
       name: "Джен Шиффер",
       img: "/images/jenn.jpeg",
       link: "https://medium.com/cool-code-pal/a-call-for-web-developers-to-deprecate-their-css-1f6430781393",
-      bio: "Веб-разработчик, теоретик сложных вычислений. Автор “PHP: The Hood Parts” и других программно-фантастических бестселлеров на Amazon Kindle и Zune»"
+      bio: "Веб-разработчик, теоретик сложных вычислений. Автор “PHP: The Hood Parts” и других программно-фантастических бестселлеров на Amazon Kindle и Zune"
     }
   },
   {
