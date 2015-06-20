@@ -2,6 +2,18 @@ var fs = require("fs")
 
 export default [
   {
+    title: "Рубрика. Советы от Павла Глоблы",
+    slug: "3-horoscope",
+    contents: fs.readFileSync(__dirname + "/3-horoscope.html", "utf-8"),
+    date: "26 июня 2015",
+    author: {
+      name: "Павел Глоба",
+      img: "/images/globa.jpeg",
+      link: "http://lurkmore.to/Павел_Глоба",
+      bio: "Расовый ассириецЪ, вселенский раввин, носитель бороды, трансцендентная личность"
+    }
+  },
+  {
     title: "Топ 5 ошибок в CSS",
     slug: "3-top-5-css-mistakes",
     contents: fs.readFileSync(__dirname + "/3-top-5-css-mistakes.html", "utf-8"),
