@@ -7,10 +7,10 @@ export default [
     contents: fs.readFileSync(__dirname + "/3-horoscope.html", "utf-8"),
     date: "26 июня 2015",
     author: {
-      name: "Павел Глоба",
-      img: "/images/globa.jpeg",
-      link: "http://lurkmore.to/Павел_Глоба",
-      bio: "Расовый ассириецЪ, вселенский раввин, носитель бороды, трансцендентная личность"
+      name: "Павел Глобла",
+      img: "/images/globa.jpg",
+      link: "https://vk.com/pavsekakii",
+      bio: "Маг, экстрасенс, носитель положительной энергетики и трансцендентная личность"
     }
   },
   {
