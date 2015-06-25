@@ -3,7 +3,7 @@ import Router from "react-router"
 const { Link } = Router
 const { PureRenderMixin } = React.addons
 
-export default class ApplicationHeader extends React.Component {
+export default class extends React.Component {
   render() {
     return (
       <td className="application_header">

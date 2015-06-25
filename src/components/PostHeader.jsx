@@ -3,7 +3,7 @@ import Router from "react-router"
 const { PureRenderMixin } = React.addons
 const { Link } = Router
 
-export default class PostHeader extends React.Component {
+export default class extends React.Component {
   mixins: [PureRenderMixin]
 
   getPermalink() {

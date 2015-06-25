@@ -2,7 +2,7 @@ import React from "react/addons"
 import PostAuthor from "PostAuthor"
 const { PureRenderMixin } = React.addons
 
-export default class PostFooter extends React.Component {
+export default class extends React.Component {
   mixins: [PureRenderMixin]
 
   render() {
