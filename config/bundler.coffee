@@ -1,6 +1,7 @@
 AppConfig = require("./application")
 
 browserify = require("browserify")
+babelify = require("babelify")
 watchify = require("watchify")
 assign = require("lodash/object/assign")
 
@@ -11,6 +12,6 @@ bundler = if production()
 else
   watchify(browserify(assign({}, watchify.args, AppConfig.browserify)))
 
-bundler.transform("babelify").transform("brfs")
+bundler.transform(babelify.configure(stage: 0)).transform("brfs")
 
 module.exports = bundler

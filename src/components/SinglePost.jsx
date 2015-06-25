@@ -1,24 +1,18 @@
 import React from "react"
 import Post from "Post"
 import posts from "../posts"
-import find from "lodash/collection/find"
 
-class SinglePost extends React.Component {
+export default class extends React.Component {
+  static contextTypes = {
+    router: React.PropTypes.func.isRequired
+  }
+
   getPost() {
     const slug = this.context.router.getCurrentParams().slug
-
-    return find(posts, post => post.slug === slug)
+    return posts.filter(post => post.slug === slug)[0]
   }
 
   render() {
-    return (
-      <Post {...this.getPost()} />
-    )
+    return (<Post {...this.getPost()} />)
   }
 }
-
-SinglePost.contextTypes = {
-  router: React.PropTypes.func.isRequired
-}
-
-export default SinglePost

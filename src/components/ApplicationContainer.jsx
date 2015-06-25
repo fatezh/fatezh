@@ -4,7 +4,11 @@ const { RouteHandler } = Router
 const { CSSTransitionGroup } = React.addons
 import ApplicationHeader from "ApplicationHeader"
 
-class ApplicationContainer extends React.Component {
+export default class extends React.Component {
+  static contextTypes = {
+    router: React.PropTypes.func.isRequired
+  }
+
   render() {
     const name = this.context.router.getCurrentPath()
 
@@ -25,9 +29,3 @@ class ApplicationContainer extends React.Component {
     )
   }
 }
-
-ApplicationContainer.contextTypes = {
-  router: React.PropTypes.func.isRequired
-}
-
-export default ApplicationContainer
