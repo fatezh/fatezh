@@ -22,7 +22,7 @@ server.use(express.static(AppConfig.buildpaths.root))
 bundle = ->
   bundler
     .bundle()
-    .on("error", (e) -> gutil.log(e.toString()); @emit("end"))
+    .on("error", AppConfig.plumber.errorHandler)
     .pipe(source("application.js"))
     .pipe(gulp.dest(AppConfig.buildpaths.javascripts))
     .pipe(livereload())
