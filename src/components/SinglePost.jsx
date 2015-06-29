@@ -9,7 +9,7 @@ export default class extends React.Component {
 
   getPost() {
     const slug = this.context.router.getCurrentParams().slug
-    return posts.filter(post => post.slug === slug)[0]
+    return posts.find(post => post.slug === slug)
   }
 
   render() {
