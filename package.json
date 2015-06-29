@@ -39,7 +39,6 @@
     "gulp-util": "~3.0.6",
     "highlight.js": "~8.6.0",
     "install": "~0.1.8",
-    "lodash": "~3.9.3",
     "npm": "~2.11.3",
     "postcss-import": "~6.0.0",
     "postcss-mixins": "~0.3.0",
