@@ -1,11 +1,8 @@
-import React from "react/addons"
+import React from "react"
 import Router from "react-router"
-const { PureRenderMixin } = React.addons
 const { Link } = Router
 
 export default class extends React.Component {
-  mixins: [PureRenderMixin]
-
   getPermalink() {
     return `/posts/${this.props.slug}`
   }

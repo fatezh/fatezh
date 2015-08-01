@@ -1,9 +1,6 @@
-import React from "react/addons"
-const { PureRenderMixin } = React.addons
+import React from "react"
 
 export default class extends React.Component {
-  mixins: [PureRenderMixin]
-
   render() {
     return (
       <section className="post_author">

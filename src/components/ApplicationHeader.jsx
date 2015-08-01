@@ -1,7 +1,6 @@
-import React from "react/addons"
+import React from "react"
 import Router from "react-router"
 const { Link } = Router
-const { PureRenderMixin } = React.addons
 
 export default class extends React.Component {
   render() {
