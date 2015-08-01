@@ -1,5 +1,5 @@
 import React from "react"
-import PostAuthor from "PostAuthor"
+import PostAuthor from "./PostAuthor"
 
 export default class extends React.Component {
   render() {

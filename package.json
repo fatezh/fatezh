@@ -7,6 +7,7 @@
     "start": "gulp serve",
     "test": "gulp test",
     "build": "NODE_ENV=production gulp build",
+    "postbuild": "NODE_ENV=production gulp render",
     "deploy:ci": "NODE_ENV=production gulp deploy:ci"
   },
   "repository": {
@@ -19,7 +20,10 @@
     "url": "https://github.com/fatezh/fatezh.github.io/issues"
   },
   "browserify": {
-    "transform": ["babelify", "brfs"]
+    "transform": [
+      "babelify",
+      "brfs"
+    ]
   },
   "devDependencies": {
     "autoprefixer-core": "~5.2.1",

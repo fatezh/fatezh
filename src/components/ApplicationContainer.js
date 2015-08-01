@@ -2,7 +2,7 @@ import React from "react/addons"
 import Router from "react-router"
 const { RouteHandler } = Router
 const { CSSTransitionGroup } = React.addons
-import ApplicationHeader from "ApplicationHeader"
+import ApplicationHeader from "./ApplicationHeader"
 
 export default class extends React.Component {
   static contextTypes = {

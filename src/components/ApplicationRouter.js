@@ -2,9 +2,9 @@ import React from "react"
 import Router from "react-router"
 const { Route, DefaultRoute } = Router
 
-import ApplicationContainer from "ApplicationContainer"
-import PostsList from "PostsList"
-import SinglePost from "SinglePost"
+import ApplicationContainer from "./ApplicationContainer"
+import PostsList from "./PostsList"
+import SinglePost from "./SinglePost"
 
 export default (
   <Route name="app" path="/" handler={ApplicationContainer}>

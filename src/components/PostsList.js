@@ -1,5 +1,5 @@
 import React from "react"
-import Post from "Post"
+import Post from "./Post"
 import posts from "../posts"
 
 export default class extends React.Component {

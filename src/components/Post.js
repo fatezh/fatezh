@@ -1,6 +1,6 @@
 import React from "react"
-import PostHeader from "PostHeader"
-import PostFooter from "PostFooter"
+import PostHeader from "./PostHeader"
+import PostFooter from "./PostFooter"
 
 export default class extends React.Component {
   getPostContents() {

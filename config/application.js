@@ -5,7 +5,7 @@ export default {
   serverport: 4000,
 
   paths: {
-    views: "src/**/*.jade",
+    mainview: "src/index.jade",
     stylesheets: "src/**/*.postcss",
     javascripts: "src/**/*.{jsx,js}",
     assets: "src/assets/**/*",
@@ -25,8 +25,7 @@ export default {
   },
 
   browserify: {
-    entries: ["./src/application.js"],
-    paths: ["./src/components"]
+    entries: ["src/application.js"]
   },
 
   plumber: {
