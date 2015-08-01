@@ -1,7 +1,6 @@
 import AppConfig from "./application"
 
 import browserify from "browserify"
-import babelify from "babelify"
 import watchify from "watchify"
 
 const production = process.env.NODE_ENV == "production"

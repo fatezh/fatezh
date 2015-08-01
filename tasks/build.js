@@ -25,7 +25,7 @@ const bundle = () => {
 }
 
 gulp.task("html", ["clean:html"], () => {
-  gulp.src(AppConfig.paths.views)
+  gulp.src(AppConfig.paths.mainview)
     .pipe(plumber(AppConfig.plumber))
     .pipe(jade())
     .pipe(gulp.dest(AppConfig.buildpaths.root))
@@ -67,7 +67,7 @@ gulp.task("serve", ["build"], () => {
   livereload.listen()
   server.listen(AppConfig.serverport)
 
-  gulp.watch(AppConfig.paths.views, ["html"])
+  gulp.watch(AppConfig.paths.mainview, ["html"])
   gulp.watch(AppConfig.paths.stylesheets, ["stylesheets"])
   gulp.watch(AppConfig.paths.assets, ["assets"])
   gulp.watch(AppConfig.paths.posts, ["posts"])

@@ -4,7 +4,7 @@ const { Link } = Router
 
 export default class extends React.Component {
   getPermalink() {
-    return `/posts/${this.props.slug}`
+    return `/posts/${this.props.slug}.html`
   }
 
   render() {
