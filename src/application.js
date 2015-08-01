@@ -5,8 +5,6 @@ import routes from "./components/ApplicationRouter"
 const routerHistory = () => {
   if (document.body.className.indexOf("in-production") >= 0) {
     return Router.HistoryLocation
-  } else {
-    return null
   }
 }
 
