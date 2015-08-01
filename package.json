@@ -18,6 +18,9 @@
   "bugs": {
     "url": "https://github.com/fatezh/fatezh.github.io/issues"
   },
+  "browserify": {
+    "transform": ["babelify", "brfs"]
+  },
   "devDependencies": {
     "autoprefixer-core": "~5.2.1",
     "babel": "^5.6.7",

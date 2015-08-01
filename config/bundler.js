@@ -11,6 +11,4 @@ if (!production) {
   bundler = watchify(browserify(Object.assign({}, watchify.args, AppConfig.browserify)))
 }
 
-bundler.transform(babelify.configure({ stage: 0 })).transform("brfs")
-
 export default bundler
