@@ -25,8 +25,7 @@ export default {
   },
 
   browserify: {
-    entries: ["./src/application.jsx"],
-    extensions: [".jsx"],
+    entries: ["./src/application.js"],
     paths: ["./src/components"]
   },
 
