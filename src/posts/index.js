@@ -1,5 +1,5 @@
 var fs = require("fs")
-require("babel/polyfill")
+require("babel-core/polyfill")
 
 const issues = {
   first: { date: "30 мая 2015" },
