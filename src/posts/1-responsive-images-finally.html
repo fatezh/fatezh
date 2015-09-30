@@ -11,29 +11,29 @@
 <p><span class="typograf-oa-n-lquot">«</span>Если вы спросите кого-нибудь<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>полицейский он или нет. Ему придется ответить. Так же и с изображениями. Спросите у сайта<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>какого размера ему нужны изображения. И он ответит» — так объяснил Балмер новую спецификацию для отзывчивых изображений на пресс-конференции.</p>
 <p>Я реализовала спецификацию за вас. Не благодарите. Когда вы заходите на страницу<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>вы должны ответить<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>какое у вас устройство: обыкновенный компьютер или мобильник. И в зависимости от ответа<span class="typograf-oa-sp-lbracket"> </span><span class="typograf-oa-lbracket">(</span>а вы обязаны ответить честно<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>это закон)  сайт покажет вам правильное изображение.</p>
 <p>Код<span class="typograf-oa-sp-lbracket"> </span><span class="typograf-oa-lbracket">(</span><a href="https://github.com/cssperverts/Ask-a-Cop-Responsive-Images-Solution">форкайте на Гитхабе</a>)  использует два популярных <nobr>Веб 2.0</nobr> концепта:<span class="typograf-oa-sp-lquot"> </span><span class="typograf-oa-lquot">«</span>switch» и<span class="typograf-oa-sp-lquot"> </span><span class="typograf-oa-lquot">«</span>jQuery», чтобы убедиться<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>что пользователь говорит правду насчет размера устройства<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>и показать правильное изображение.</p>
-<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> mobileOrDesktop = prompt(<span class="hljs-string">"Is this a mobile device (y) or desktop (n)? y/n"</span>);
-<span class="hljs-keyword">var</span> <span class="hljs-variable">$responsiveImage</span> = $(<span class="hljs-string">'img#responsive'</span>);
+<pre><code class="lang-javascript">var mobileOrDesktop = prompt(<span class="hljs-string">"Is this a mobile device (y) or desktop (n)? y/n"</span>);
+var <span class="hljs-variable">$responsiveImage</span> = $(<span class="hljs-string">'img#responsive'</span>);
 <span class="hljs-keyword">switch</span> ( mobileOrDesktop ) {
-  <span class="hljs-keyword">case</span> <span class="hljs-string">'y'</span>:
+  case <span class="hljs-string">'y'</span>:
     <span class="hljs-variable">$responsiveImage</span>.attr({
       <span class="hljs-string">'src'</span> : <span class="hljs-string">'mobile.jpg'</span>,
       <span class="hljs-string">'alt'</span> : <span class="hljs-string">'mobile image'</span>
     });
-    <span class="hljs-keyword">break</span>;
-  <span class="hljs-keyword">case</span> <span class="hljs-string">'n'</span>:
+    break;
+  case <span class="hljs-string">'n'</span>:
     <span class="hljs-variable">$responsiveImage</span>.attr({
       <span class="hljs-string">'src'</span> : <span class="hljs-string">'desktop.jpg'</span>,
       <span class="hljs-string">'alt'</span> : <span class="hljs-string">'desktop image'</span>
     });
-    <span class="hljs-keyword">break</span>;
-  <span class="hljs-keyword">default</span>:
+    break;
+  default:
     <span class="hljs-variable">$responsiveImage</span>.attr({
       <span class="hljs-string">'src'</span> : <span class="hljs-string">'trojanhorse.jpg'</span>,
       <span class="hljs-string">'alt'</span> : <span class="hljs-string">'hack the planet'</span>
     });
-    <span class="hljs-variable">$responsiveImage</span>.after(<span class="hljs-string">'&lt;h1&gt;TOLD YA TO CHOOSE Y OR NO BUT YOU DIDN\'T SO&lt;br /&gt;~ * V I R U S * ~'</span>);
-    <span class="hljs-keyword">break</span>;
-}
+    <span class="hljs-variable">$responsiveImage</span>.after(<span class="hljs-string">'&lt;h1&gt;TOLD YA TO CHOOSE Y OR NO BUT YOU DIDN\'</span>T SO&lt;br /&gt;~ * V I R U S * ~<span class="hljs-string">');
+    break;
+}</span>
 </code></pre>
 <p><img src="/images/responsive-demo.jpeg" alt="" /></p>
 <p>Все мы очень долго ждали решения для отзывчивых изображений. Здорово<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>что решение<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>к которому пришли разработчики и производители браузеров<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>такое простое. Простое как для разработчика<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>так и для пользователя.</p>

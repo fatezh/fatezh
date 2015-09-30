@@ -1,6 +1,6 @@
 import AppConfig from "./application"
 
-import autoprefixer from "autoprefixer-core"
+import autoprefixer from "autoprefixer"
 import postcssVars from "postcss-simple-vars"
 import postcssImport from "postcss-import"
 import postcssNested from "postcss-nested"

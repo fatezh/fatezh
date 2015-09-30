@@ -2,39 +2,39 @@
 <p>Вложенные циклы имеют вычислительную сложность O<span class="typograf-oa-sp-lbracket"> </span><span class="typograf-oa-lbracket">(</span>n^2). Если у вас <code>n</code> элементов<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>то цикл выполнится за <code>n*n</code> секунд.</p>
 <pre><code class="lang-javascript"><span class="hljs-comment">// из-за того, что цикл вложенный,</span>
 <span class="hljs-comment">// он будет выполняться 100 секунд</span>
-<span class="hljs-keyword">for</span> <span class="hljs-params">(var i=<span class="hljs-number">0</span>; i&lt;<span class="hljs-number">10</span>; i+=<span class="hljs-number">1</span>)</span> {
- <span class="hljs-keyword">for</span> <span class="hljs-params">(var j=<span class="hljs-number">0</span>; j&lt;<span class="hljs-number">10</span>; j+=<span class="hljs-number">1</span>)</span> {
- console.<span class="hljs-built_in">log</span><span class="hljs-params">(i, j)</span>;
+<span class="hljs-keyword">for</span> (var i=<span class="hljs-number">0</span>; i&lt;<span class="hljs-number">10</span>; i+=<span class="hljs-number">1</span>) {
+ <span class="hljs-keyword">for</span> (var j=<span class="hljs-number">0</span>; j&lt;<span class="hljs-number">10</span>; j+=<span class="hljs-number">1</span>) {
+ console.<span class="hljs-built_in">log</span>(i, j);
  }
 }
 </code></pre>
 <p>В реальных приложениях<span class="typograf-oa-sp-lbracket"> </span><span class="typograf-oa-lbracket">(</span>например<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>в софте для МРТ<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>над которым я работаю)  такие временные затраты недопустимы. Чтобы код выполнялся в два раза быстрее<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>давайте развернем вложенный цикл:</p>
-<pre><code class="lang-javascript">// хорошо
-for (var <span class="hljs-variable">i=</span><span class="hljs-number">0</span>, <span class="hljs-variable">j=</span><span class="hljs-number">0</span>; i&lt;<span class="hljs-number">10</span> &amp;&amp; j&lt;<span class="hljs-number">10</span>; j++, <span class="hljs-variable">i=</span>(<span class="hljs-variable">j=</span>=<span class="hljs-number">10</span>)?i+<span class="hljs-number">1</span>:i,<span class="hljs-variable">j=</span>(<span class="hljs-variable">j=</span>=<span class="hljs-number">10</span>)?<span class="hljs-variable">j=</span><span class="hljs-number">0</span>:j) {
- console.log(i, j);
+<pre><code class="lang-javascript"><span class="hljs-comment">// хорошо</span>
+<span class="hljs-keyword">for</span> (var i=<span class="hljs-number">0</span>, j=<span class="hljs-number">0</span>; i&lt;<span class="hljs-number">10</span> &amp;&amp; j&lt;<span class="hljs-number">10</span>; j++, i=(j==<span class="hljs-number">10</span>)?i+<span class="hljs-number">1</span>:i,j=(j==<span class="hljs-number">10</span>)?j=<span class="hljs-number">0</span>:j) {
+ console.<span class="hljs-built_in">log</span>(i, j);
 }
 </code></pre>
 <p><em>Совет от профессионала</em>: избавьтесь от тела цикла<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>чтобы сделать код еще быстрее.</p>
-<pre><code class="lang-javascript">// великолепно
-for (var <span class="hljs-variable">i=</span><span class="hljs-number">0</span>, <span class="hljs-variable">j=</span><span class="hljs-number">0</span>; i&lt;<span class="hljs-number">10</span> &amp;&amp; j&lt;<span class="hljs-number">10</span>; j++, <span class="hljs-variable">i=</span>(<span class="hljs-variable">j=</span>=<span class="hljs-number">10</span>)?i+<span class="hljs-number">1</span>:i,<span class="hljs-variable">j=</span>(<span class="hljs-variable">j=</span>=<span class="hljs-number">10</span>)?<span class="hljs-variable">j=</span><span class="hljs-number">0</span>:j, console.log(i, j)) { }
+<pre><code class="lang-javascript"><span class="hljs-comment">// великолепно</span>
+<span class="hljs-keyword">for</span> (var i=<span class="hljs-number">0</span>, j=<span class="hljs-number">0</span>; i&lt;<span class="hljs-number">10</span> &amp;&amp; j&lt;<span class="hljs-number">10</span>; j++, i=(j==<span class="hljs-number">10</span>)?i+<span class="hljs-number">1</span>:i,j=(j==<span class="hljs-number">10</span>)?j=<span class="hljs-number">0</span>:j, console.<span class="hljs-built_in">log</span>(i, j)) { }
 </code></pre>
 <h3 id="-">Сдвиг влево вместо умножения</h3>
 <p>На молекулярном уровне компьютеры могут лишь складывать<span class="typograf-oa-sp-lbracket"> </span><span class="typograf-oa-lbracket">(</span>да и то у них получается не очень). Компьютеры умножают с помощью логарифмических таблиц и угадывания. Быстрые процессоры быстро угадывают правильный результат.</p>
 <p>Вместо умножения используйте побитовый сдвиг влево. Он чуть сложнее<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>но к нему быстро привыкаешь. Формула для умножения <code>x*y</code> проста: <code>x &lt;&lt; (y - 1)</code>.</p>
 <pre><code class="lang-javascript"><span class="hljs-comment">// умножить на 1</span>
-[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>].<span class="hljs-keyword">forEach</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(n)</span></span>{ <span class="hljs-keyword">return</span> n&lt;&lt;<span class="hljs-number">0</span>; }) <span class="hljs-comment">// 1,2,3,4</span>
+[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>].forEach(function(n){ <span class="hljs-keyword">return</span> n&lt;&lt;<span class="hljs-number">0</span>; }) <span class="hljs-comment">// 1,2,3,4</span>
 
 <span class="hljs-comment">// умножить на 2</span>
-[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>].<span class="hljs-keyword">forEach</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(n)</span></span>{ <span class="hljs-keyword">return</span> n&lt;&lt;<span class="hljs-number">1</span>; }) <span class="hljs-comment">// 2,4,6,8</span>
+[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>].forEach(function(n){ <span class="hljs-keyword">return</span> n&lt;&lt;<span class="hljs-number">1</span>; }) <span class="hljs-comment">// 2,4,6,8</span>
 
 <span class="hljs-comment">// умножить на 3</span>
-[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>].<span class="hljs-keyword">forEach</span>(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(n)</span></span>{ <span class="hljs-keyword">return</span> n&lt;&lt;<span class="hljs-number">2</span>; }) <span class="hljs-comment">// 3,6,9,12</span>
+[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>].forEach(function(n){ <span class="hljs-keyword">return</span> n&lt;&lt;<span class="hljs-number">2</span>; }) <span class="hljs-comment">// 3,6,9,12</span>
 </code></pre>
 <h3 id="-">Округляйте числа перед умножением</h3>
 <p>Трюк выше работает для целых чисел<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>но не работает для чисел с плавающей точкой. Компьютер будет умножать <code>9.52434123 * 2</code> целую вечность<span class="typograf-oa-sp-lbracket"> </span><span class="typograf-oa-lbracket">(</span>в миллисекундах). Чтобы ускорить такие операции<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>пожертвуйте точностью и округлите число с помощью <code>toFixed</code>:</p>
-<pre><code class="lang-javascript">// примерно то же самое, но работает гораздо быстрее
-<span class="hljs-number">9.52434123</span> * 2
-<span class="hljs-number">9.52434123</span>.toFixed(2) * 2
+<pre><code class="lang-javascript"><span class="hljs-comment">// примерно то же самое, но работает гораздо быстрее</span>
+<span class="hljs-number">9.52434123</span> * <span class="hljs-number">2</span>
+<span class="hljs-number">9.52434123</span>.toFixed(<span class="hljs-number">2</span>) * <span class="hljs-number">2</span>
 </code></pre>
 <h3 id="-firefox-">Добавьте ссылку<span class="typograf-oa-sp-lquot"> </span><span class="typograf-oa-lquot">«</span>Скачать Firefox» на каждую страницу сайта</h3>
 <p>Вместо того<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>чтобы оптимизировать код<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>попросите пользователей использовать Firefox вместо Internet Explorer. Firefox — самый быстрый в мире браузер. Призывайте пользователей перейти на него с помощью картинки:</p>
