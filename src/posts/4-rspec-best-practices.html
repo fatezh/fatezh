@@ -1,7 +1,7 @@
 <p>Многие умеют писать тесты<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>но мало кто пишет хорошо. Конструкции знают<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>а получается шифровка:</p>
 <pre><code class="lang-ruby"><span class="hljs-operator"><span class="hljs-keyword">describe</span> <span class="hljs-keyword">User</span> <span class="hljs-keyword">do</span>
   <span class="hljs-keyword">describe</span> <span class="hljs-string">"#admin?"</span> <span class="hljs-keyword">do</span>
-    context <span class="hljs-string">"when user is locked"</span> <span class="hljs-keyword">do</span>
+    <span class="hljs-keyword">context</span> <span class="hljs-string">"when user is locked"</span> <span class="hljs-keyword">do</span>
       # ...
     <span class="hljs-keyword">end</span>
   <span class="hljs-keyword">end</span>
@@ -40,31 +40,31 @@ it <span class="hljs-string">"has absolutely insane HTTP 401 status code if not 
 </code></pre>
 <h3 id="-">Один тест — куча проверок</h3>
 <p>Каждый тест должен производить несколько проверок. Так мы сэкономим время на запись и запуск проверок. Сравните:</p>
-<pre><code class="lang-ruby"><span class="hljs-comment"># плохо</span>
-describe <span class="hljs-string">"#reported_conclusion"</span> <span class="hljs-built_in">do</span>
-  subject { test.reported_conclusion }
+<pre><code class="lang-ruby"># плохо
+<span class="hljs-operator"><span class="hljs-keyword">describe</span> <span class="hljs-string">"#reported_conclusion"</span> <span class="hljs-keyword">do</span>
+  subject { <span class="hljs-keyword">test</span>.reported_conclusion }
 
-  context <span class="hljs-string">"when conclusion is true"</span> <span class="hljs-built_in">do</span>
-    <span class="hljs-keyword">before</span> { test.conclusion = <span class="hljs-constant">true</span> }
-    <span class="hljs-keyword">it</span> { is_expected.<span class="hljs-built_in">to</span> eq <span class="hljs-string">"Cool"</span> }
-  <span class="hljs-function"><span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">context</span> <span class="hljs-string">"when conclusion is true"</span> <span class="hljs-keyword">do</span>
+    <span class="hljs-keyword">before</span> { <span class="hljs-keyword">test</span>.conclusion = <span class="hljs-literal">true</span> }
+    it { is_expected.<span class="hljs-keyword">to</span> eq <span class="hljs-string">"Cool"</span> }
+  <span class="hljs-keyword">end</span>
 
-  <span class="hljs-title">context</span> "<span class="hljs-title">when</span> <span class="hljs-title">conclusion</span> <span class="hljs-title">is</span> <span class="hljs-title">false</span>" <span class="hljs-title">do</span></span>
-    <span class="hljs-keyword">before</span> { test.conclusion = <span class="hljs-constant">false</span> }
-    <span class="hljs-keyword">it</span> { is_expected.<span class="hljs-built_in">to</span> eq <span class="hljs-string">"Not Cool"</span> }
-  <span class="hljs-function"><span class="hljs-keyword">end</span>
-<span class="hljs-title">end</span></span>
+  <span class="hljs-keyword">context</span> <span class="hljs-string">"when conclusion is false"</span> <span class="hljs-keyword">do</span>
+    <span class="hljs-keyword">before</span> { <span class="hljs-keyword">test</span>.conclusion = <span class="hljs-literal">false</span> }
+    it { is_expected.<span class="hljs-keyword">to</span> eq <span class="hljs-string">"Not Cool"</span> }
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span></span>
 </code></pre>
 <pre><code class="lang-ruby"># хорошо
-<span class="hljs-keyword">describe</span> <span class="hljs-string">"That Conclusion Method All Humans Would Fall In Love"</span> <span class="hljs-keyword">do</span>
+<span class="hljs-operator"><span class="hljs-keyword">describe</span> <span class="hljs-string">"That Conclusion Method All Humans Would Fall In Love"</span> <span class="hljs-keyword">do</span>
   it <span class="hljs-string">"should be always correct"</span> <span class="hljs-keyword">do</span>
-    <span class="hljs-keyword">test</span>.conclusion = true
-    <span class="hljs-keyword">test</span>.reported_conclusion.should <span class="hljs-keyword">eq</span> <span class="hljs-string">"Cool"</span>
+    <span class="hljs-keyword">test</span>.conclusion = <span class="hljs-literal">true</span>
+    <span class="hljs-keyword">test</span>.reported_conclusion.should eq <span class="hljs-string">"Cool"</span>
 
-    <span class="hljs-keyword">test</span>.conclusion = false
-    <span class="hljs-keyword">test</span>.reported_conclusion.should <span class="hljs-keyword">eq</span> <span class="hljs-string">"Not Cool"</span>
-  end
-end
+    <span class="hljs-keyword">test</span>.conclusion = <span class="hljs-literal">false</span>
+    <span class="hljs-keyword">test</span>.reported_conclusion.should eq <span class="hljs-string">"Not Cool"</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span></span>
 </code></pre>
 <h3 id="-should-">Используйте <code>should</code></h3>
 <p>Не пишите тексты тестов в третьем лице. Пусть сраный компьютер знает<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>что он обязан так работать: используйте <code>should</code>. Заодно потренируете скорость набора слова<span class="typograf-oa-sp-lquot"> </span><span class="typograf-oa-lquot">«</span>should». Точно пригодится!</p>
