@@ -1,0 +1,81 @@
+<p>Многие умеют писать тесты<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>но мало кто пишет хорошо. Конструкции знают<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>а получается шифровка:</p>
+<pre><code class="lang-ruby"><span class="hljs-operator"><span class="hljs-keyword">describe</span> <span class="hljs-keyword">User</span> <span class="hljs-keyword">do</span>
+  <span class="hljs-keyword">describe</span> <span class="hljs-string">"#admin?"</span> <span class="hljs-keyword">do</span>
+    context <span class="hljs-string">"when user is locked"</span> <span class="hljs-keyword">do</span>
+      # ...
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span></span>
+</code></pre>
+<p>В этом посте я постараюсь показать<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>как писать понятные<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>интересные и насыщенные тесты с хорошей структурой.</p>
+<h3 id="-">Не указывайте явно тестируемый метод</h3>
+<p>Заинтересуйте читателя<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>сыграв на его инстинктах. Добавьте эмоций и местоимений:</p>
+<pre><code class="lang-ruby"><span class="hljs-comment"># плохо</span>
+describe <span class="hljs-string">".authenticate"</span>
+describe <span class="hljs-string">"<span class="hljs-subst">#admin</span>?"</span>
+</code></pre>
+<pre><code class="lang-ruby"><span class="hljs-comment"># хорошо</span>
+<span class="hljs-title">describe</span> <span class="hljs-string">"5 Crazy Methods To See Before You Die"</span>
+describe <span class="hljs-string">"The One Weird Method That Lets You Write To File Atomically"</span>
+</code></pre>
+<h3 id="-context-">Не используйте <code>context</code></h3>
+<p><code>context</code> добавляет вложенности и увеличивает цикломатическую сложность тестов. Не надо так.</p>
+<pre><code class="lang-ruby"><span class="hljs-comment"># плохо</span>
+context <span class="hljs-string">"when logged in"</span> <span class="hljs-built_in">do</span>
+  <span class="hljs-keyword">it</span> { is_expected.<span class="hljs-built_in">to</span> respond_with <span class="hljs-number">200</span> }
+<span class="hljs-function"><span class="hljs-keyword">end</span>
+
+<span class="hljs-title">context</span> "<span class="hljs-title">when</span> <span class="hljs-title">logged</span> <span class="hljs-title">out</span>" <span class="hljs-title">do</span></span>
+  <span class="hljs-keyword">it</span> { is_expected.<span class="hljs-built_in">to</span> respond_with <span class="hljs-number">401</span> }
+<span class="hljs-keyword">end</span>
+</code></pre>
+<pre><code class="lang-ruby"># хорошо
+it <span class="hljs-string">"has quite normal HTTP 200 status code if logged in"</span> <span class="hljs-keyword">do</span>
+  <span class="hljs-built_in">response</span>.should respond_with <span class="hljs-number">200</span>
+<span class="hljs-keyword">end</span>
+
+it <span class="hljs-string">"has absolutely insane HTTP 401 status code if not logged in"</span> <span class="hljs-keyword">do</span>
+  <span class="hljs-built_in">response</span>.should respond_with <span class="hljs-number">401</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h3 id="-">Один тест — куча проверок</h3>
+<p>Каждый тест должен производить несколько проверок. Так мы сэкономим время на запись и запуск проверок. Сравните:</p>
+<pre><code class="lang-ruby"><span class="hljs-comment"># плохо</span>
+describe <span class="hljs-string">"#reported_conclusion"</span> <span class="hljs-built_in">do</span>
+  subject { test.reported_conclusion }
+
+  context <span class="hljs-string">"when conclusion is true"</span> <span class="hljs-built_in">do</span>
+    <span class="hljs-keyword">before</span> { test.conclusion = <span class="hljs-constant">true</span> }
+    <span class="hljs-keyword">it</span> { is_expected.<span class="hljs-built_in">to</span> eq <span class="hljs-string">"Cool"</span> }
+  <span class="hljs-function"><span class="hljs-keyword">end</span>
+
+  <span class="hljs-title">context</span> "<span class="hljs-title">when</span> <span class="hljs-title">conclusion</span> <span class="hljs-title">is</span> <span class="hljs-title">false</span>" <span class="hljs-title">do</span></span>
+    <span class="hljs-keyword">before</span> { test.conclusion = <span class="hljs-constant">false</span> }
+    <span class="hljs-keyword">it</span> { is_expected.<span class="hljs-built_in">to</span> eq <span class="hljs-string">"Not Cool"</span> }
+  <span class="hljs-function"><span class="hljs-keyword">end</span>
+<span class="hljs-title">end</span></span>
+</code></pre>
+<pre><code class="lang-ruby"># хорошо
+<span class="hljs-keyword">describe</span> <span class="hljs-string">"That Conclusion Method All Humans Would Fall In Love"</span> <span class="hljs-keyword">do</span>
+  it <span class="hljs-string">"should be always correct"</span> <span class="hljs-keyword">do</span>
+    <span class="hljs-keyword">test</span>.conclusion = true
+    <span class="hljs-keyword">test</span>.reported_conclusion.should <span class="hljs-keyword">eq</span> <span class="hljs-string">"Cool"</span>
+
+    <span class="hljs-keyword">test</span>.conclusion = false
+    <span class="hljs-keyword">test</span>.reported_conclusion.should <span class="hljs-keyword">eq</span> <span class="hljs-string">"Not Cool"</span>
+  end
+end
+</code></pre>
+<h3 id="-should-">Используйте <code>should</code></h3>
+<p>Не пишите тексты тестов в третьем лице. Пусть сраный компьютер знает<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>что он обязан так работать: используйте <code>should</code>. Заодно потренируете скорость набора слова<span class="typograf-oa-sp-lquot"> </span><span class="typograf-oa-lquot">«</span>should». Точно пригодится!</p>
+<pre><code class="lang-ruby"><span class="hljs-comment"># плохо</span>
+<span class="hljs-keyword">it</span> <span class="hljs-string">"does not change timings"</span> do
+  expect(consumption.occur_at).<span class="hljs-keyword">to</span> <span class="hljs-keyword">equal</span>(valid.occur_at)
+<span class="hljs-keyword">end</span>
+</code></pre>
+<pre><code class="lang-ruby"><span class="hljs-comment"># хорошо</span>
+<span class="hljs-keyword">it</span> <span class="hljs-string">"should not change timings"</span> <span class="hljs-built_in">do</span>
+  consumption.occur_at.should == valid.occur_at
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>Если вы используете данные советы<span class="typograf-oa-comma">,</span><span class="typograf-oa-comma-sp"> </span>вам никогда не будет стыдно за написанное.</p>

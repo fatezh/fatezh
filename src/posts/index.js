@@ -15,10 +15,25 @@ const authors = {
   nicolas: {
     name: "Николас Ортензио",
     img: "/images/nicolas.jpeg"
+  },
+  pavel: {
+    name: "Павел Глобла",
+    img: "/images/globa.jpg",
+    link: "https://vk.com/pavsekakii",
+    bio: "Маг, экстрасенс, носитель положительной энергетики и трансцендентная личность"
   }
 }
 
 export default [
+  {
+    title: "RSpec Best Practices 2015",
+    slug: "4-rspec-best-practices",
+    contents: fs.readFileSync(__dirname + "/4-rspec-best-practices.html", "utf-8"),
+    date: "30 сентября 2015",
+    author: Object.assign({}, authors.pavel, {
+      bio: "Clojure-разработчик, ушедший в Ruby. В детстве любил аттракцион «Осциллограф»"
+    })
+  },
   {
     title: "Заклинаю вас, откажитесь от CSS",
     slug: "3-deprecate-your-css",
@@ -44,12 +59,7 @@ export default [
     slug: "3-horoscope",
     contents: fs.readFileSync(__dirname + "/3-horoscope.html", "utf-8"),
     date: issues.third.date,
-    author: {
-      name: "Павел Глобла",
-      img: "/images/globa.jpg",
-      link: "https://vk.com/pavsekakii",
-      bio: "Маг, экстрасенс, носитель положительной энергетики и трансцендентная личность"
-    }
+    author: Object.assign({}, authors.pavel)
   },
   {
     title: "Введение в табличный API HTML5",
