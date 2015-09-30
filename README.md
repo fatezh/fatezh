@@ -14,7 +14,7 @@
 Несмотря на то, что в Фатеже живет 5846 человек,
 у нас тут nodejs, Gulp, React, Browserify, Jade, PostCSS, ES6,
 Continuous Integration, Continuous Delivery и
-[HTML5 Tables API](http://fatezh.github.io/#/posts/2-html5-table-api).
+[HTML5 Tables API](http://fatezh.github.io/posts/2-html5-table-api.html).
 
 Но ставится все это просто:
 
