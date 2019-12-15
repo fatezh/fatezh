@@ -48,7 +48,7 @@
     "gulp-util": "~3.0.6",
     "highlight.js": "~8.8.0",
     "install": "~0.1.8",
-    "npm": "~3.3.4",
+    "npm": "~6.13.4",
     "postcss-import": "~7.0.0",
     "postcss-mixins": "~1.0.1",
     "postcss-nested": "~1.0.0",
