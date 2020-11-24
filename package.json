@@ -46,7 +46,7 @@
     "gulp-rename": "~1.2.2",
     "gulp-typograf": "~1.0.5",
     "gulp-util": "~3.0.6",
-    "highlight.js": "~8.8.0",
+    "highlight.js": "~10.1.2",
     "install": "~0.1.8",
     "npm": "~3.3.4",
     "postcss-import": "~7.0.0",
